@@ -1,3 +1,3 @@
 # demo-goods
 goods
-angular demo1
+angular demo
