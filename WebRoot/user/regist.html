@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html ng-app="regist" ng-controller="registCtrol">
+<head>
+<meta charset="utf-8">
+<title ng-bind="title"></title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="/goods/assets/css/bootstrap.min.css" rel="stylesheet">
+<link href="/goods/assets/css/style.min.css" rel="stylesheet">
+<link href="/goods/assets/css/retina.min.css" rel="stylesheet">
+ <link href="/goods/tips/css/example.css" type="text/css" rel="stylesheet">
+<link href="/goods/tips/css/sweet-alert.css" type="text/css" rel="stylesheet">
+<script src="/goods/tips/js/sweet-alert.min.js"> </script>
+<!--[if lt IE 9]>
+	  	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<script src="assets/js/respond.min.js"></script>
+		<link href="assets/css/ie.css" rel="stylesheet">
+	<![endif]-->
+<!--[if IE 9]>
+		<link id="ie9style" href="assets/css/ie9.css" rel="stylesheet">
+	<![endif]-->
+<style type="text/css">
+body {
+	background: url("/goods/assets/img/bg-login.jpg") !important;
+	overflow: hidden;
+}
+
+.fa {
+	width: 14px;
+}
+
+.popover {
+	z-index: 9999999;
+}
+
+#verify {
+	width: 100px;
+}
+
+#verifyCode {
+	width: 80px;
+	height: 34px;
+}
+</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="row">
+				<div class="login-box">
+					<hr>
+					<div class="icons"></div>
+					<h2>Free registration</h2>
+					<form name="registForm" class="form-horizontal" action="index.html" method="post">
+						<fieldset>
+							<div class="input-wrap">
+								<div class="input-prepend input-group" title="Loginname">
+									<span class="input-group-addon">
+										<i class="fa fa-user"></i>
+									</span>
+									<input name="loginname" class="form-control" type="text" placeholder="用户名" ng-model="user.loginname" ng-blur="checkName($event)" required />
+								</div>
+							</div>
+							<div class="input-wrap">
+								<div class="input-prepend input-group" title="Password">
+									<span class="input-group-addon">
+										<i class="fa fa-lock"></i>
+									</span>
+									<input name="password" class="form-control" type="password" placeholder="密码" ng-model="user.loginpass" ng-blur="change($event)" required />
+								</div>
+							</div>
+							<div class="input-wrap">
+								<div class="input-prepend input-group" title="Repassword">
+									<span class="input-group-addon">
+										<i class="fa fa-lock"></i>
+									</span>
+									<input name="repassword" class="form-control" type="password" placeholder="重新密码" ng-model="user.reloginpass" ng-blur="checkPassword($event)" required />
+								</div>
+							</div>
+							<div class="input-wrap">
+								<div class="input-prepend input-group" title="Email">
+									<span class="input-group-addon">
+										<i class="fa fa-envelope"></i>
+									</span>
+									<input name="email" class="form-control" type="email" placeholder="邮箱" ng-model="user.email" ng-blur="changeEmail($event)" required />
+								</div>
+							</div>
+							<label for="remember" class="remember">
+								<input type="checkbox" id="remember" />
+								Remember me
+							</label>
+							<div class="button-login">
+                  				<button type="button" id="btn_back" class="btn" ng-click="recover()">Return</button>
+								<button type="button" class="btn btn-primary" ng-click="submit()">Regist</button>
+							</div>
+							<div class="clearfix"></div>
+					</form>
+					<hr>
+					<div class="icons"></div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="modal fade" id="myModal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title">信息</h4>
+					</div>
+					<div class="modal-body">
+						<p ng-bind="errorMsg"></p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="/goods/assets/js/jquery-2.1.0.min.js"></script>
+	<!--<![endif]-->
+	<!--[if IE]>
+	
+		<script src="/goods/assets/js/jquery-1.11.0.min.js"></script>
+	
+	<![endif]-->
+	<!--[if !IE]>-->
+	<script type="text/javascript">
+		window.jQuery || document.write("<script src='/goods/assets/js/jquery-2.1.0.min.js'>" + "<"+"/script>");
+	</script>
+	<!--<![endif]-->
+	<!--[if IE]>
+	
+		<script type="text/javascript">
+	 	window.jQuery || document.write("<script src='/goods/assets/js/jquery-1.11.0.min.js'>"+"<"+"/script>");
+		</script>
+		
+	<![endif]-->
+	<script src="/goods/assets/js/jquery-migrate-1.2.1.min.js"></script>
+	<script src="/goods/assets/js/bootstrap.min.js"></script>
+	<!-- theme scripts -->
+	<script src="/goods/assets/js/custom.min.js"></script>
+	<script src="/goods/assets/js/core.min.js"></script>
+	<script src="/goods/assets/js/angular.min.js"></script>
+	<script src="/goods/assets/js/pages/angularConfig.js"></script>
+	<!-- end: JavaScript-->
+	<script type="text/javascript" src="/goods/js/regist.js"></script>
+
+</body>
+</html>
